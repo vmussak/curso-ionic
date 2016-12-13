@@ -1,0 +1,29 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>
+			Exemplo com Firebase
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<div *ngIf="currentUser">
+		<button ion-button block color="info" (click)="tirarFoto()">Tirar uma foto</button>
+		<img [src]="profilePicture">
+		<button ion-button block color="danger" (click)="fazerLogoff()">Logoff</button>
+	</div>
+	<div *ngIf="!currentUser">
+		<form #loginForm="ngForm" novalidate>
+			<ion-item>
+				<ion-label floating color="primary">E-mail</ion-label>
+				<ion-input [(ngModel)]="credentials.email" name="email" type="email" #email="ngModel"></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label floating color="primary">Senha</ion-label>
+				<ion-input [(ngModel)]="credentials.password" name="password" type="password" #password="ngModel"></ion-input>
+			</ion-item>
+			<button ion-button block color="success" (click)="fazerLogin(loginForm)">LOGAR!</button>
+		</form>
+		<button ion-button block color="primary" (click)="cadastrar()">Cadastrar</button>
+	</div>
+</ion-content>

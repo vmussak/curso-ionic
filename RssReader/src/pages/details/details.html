@@ -1,0 +1,9 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>{{post.title}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<div [innerHTML]="post.encoded | sanitizeHtml"></div>
+</ion-content>

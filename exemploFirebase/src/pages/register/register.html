@@ -1,0 +1,19 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Cadastrar</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<form #registerForm="ngForm" novalidate>
+		<ion-item>
+			<ion-label floating color="primary">E-mail</ion-label>
+			<ion-input [(ngModel)]="credentials.email" name="email" type="email" #email="ngModel"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating color="primary">Senha</ion-label>
+			<ion-input [(ngModel)]="credentials.password" name="password" type="password" #password="ngModel"></ion-input>
+		</ion-item>
+		<button ion-button block color="success" (click)="doRegister(registerForm)">REGISTRAR</button>
+	</form>
+</ion-content>

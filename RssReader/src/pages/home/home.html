@@ -1,0 +1,15 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>
+			Rsss Reader
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+		<ion-item *ngFor="let item of retorno" (click)="openPage(item)">
+			{{item.title}}
+		</ion-item>
+	</ion-list>
+</ion-content>

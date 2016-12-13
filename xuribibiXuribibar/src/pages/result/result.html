@@ -1,0 +1,35 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>XuribiBAR</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<div class="no-bars" *ngIf="venueInfo.noResults" (click)="navCtrl.pop()">
+		<ion-icon name='sad'></ion-icon>
+		<h1>Nenhum Bar encontrado</h1>
+		<p>Selecione outra região da sua cidade e tente novamente</p>
+	</div>
+
+	<ion-card class="adv-map" *ngIf="venueInfo.exists">
+		<div style="position: relative; min-height: 267px">
+			<img [src]="venueInfo.image" />
+		</div>
+
+		<ion-item>
+			<h1 class="venue-title">{{venueInfo.name}}</h1>
+			<p>{{venueInfo.address}}</p>
+		</ion-item>
+
+		<ion-item>
+			<span item-left>
+      {{venueInfo.price}}
+    </span>
+			<button ion-button color="primary" ion-icon dark clear item-right (click)="openFoursquare()">
+      <ion-icon name="logo-foursquare"></ion-icon>
+      Ver no Foursquare
+    </button>
+		</ion-item>
+	</ion-card>
+</ion-content>
